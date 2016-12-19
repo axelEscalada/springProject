@@ -27,7 +27,7 @@ public class PublicacionService {
 
 	//El error lazy se debe a que el metodo inicia la transaccion y al cerrarla se pierde la lista
 	@Transactional(readOnly = true) 
-	public List<Publicacion> findPublicaciones(Long id){//MEJORAR EL QUERY QUE NO FUNCIONA
+	public List<Publicacion> findPublicaciones(Long id){
 		
 		List<Publicacion> publicaciones = (List<Publicacion>) pDao.findByUsuario(id);
 		
