@@ -1,0 +1,30 @@
+[INFO ] 29-oct 23:42:41 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:42:41 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:42:43 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@192c3f1e: startup date [Sat Oct 29 23:42:43 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:42:44 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:42:44 nhancerBySpringCGLIB$$fb64a93e --> Datasource: jdbc:mysql://localhost:3306/springproject"
+[INFO ] 29-oct 23:42:45 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 29-oct 23:43:25 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:43:24 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:43:25 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@561b6512: startup date [Sat Oct 29 23:43:25 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:43:26 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:43:26 nhancerBySpringCGLIB$$c7498920 --> Datasource: jdbc:mysql://localhost:3306/springproject"
+[INFO ] 29-oct 23:43:26 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 29-oct 23:48:04 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:48:04 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:48:05 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@561b6512: startup date [Sat Oct 29 23:48:05 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:48:06 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:48:06 nhancerBySpringCGLIB$$c7498920 --> Datasource: jdbc:mysql://localhost:3306/springproject
+[INFO ] 29-oct 23:48:06 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 29-oct 23:50:47 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:50:47 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:50:47 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@561b6512: startup date [Sat Oct 29 23:50:47 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:50:49 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:50:49 nhancerBySpringCGLIB$$c7498920 --> Datasource: jdbc:mysql://localhost:3306/springproject
+[INFO ] 29-oct 23:50:49 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 29-oct 23:52:15 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:52:15 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:52:16 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@561b6512: startup date [Sat Oct 29 23:52:16 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:52:17 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:52:17 nhancerBySpringCGLIB$$c7498920 --> Datasource: jdbc:mysql://localhost:3306/springproject
+[INFO ] 29-oct 23:52:17 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
+[INFO ] 29-oct 23:55:07 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@74650e52: startup date [Sat Oct 29 23:55:07 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:55:08 tationConfigApplicationContext --> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@561b6512: startup date [Sat Oct 29 23:55:08 ART 2016]; root of context hierarchy
+[INFO ] 29-oct 23:55:09 source.DriverManagerDataSource --> Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO ] 29-oct 23:55:09 nhancerBySpringCGLIB$$c7498920 --> Datasource: jdbc:mysql://localhost:3306/springproject
+[INFO ] 29-oct 23:55:09 tainerEntityManagerFactoryBean --> Building JPA container EntityManagerFactory for persistence unit 'default'
