@@ -1,5 +1,6 @@
 package com.axel.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,8 +14,13 @@ import javax.persistence.OneToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Persona {
+public class Persona implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3164008341198096446L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable=false,unique=true)
@@ -32,7 +38,6 @@ public class Persona {
 	
 	@Column
 	private String trabajo;
-	
 	
 	@OneToOne(mappedBy = "persona", fetch = FetchType.LAZY) 
 	private Usuario usuario;

@@ -3,6 +3,7 @@ package com.axel.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,12 +14,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-//@NamedQuery(name = "Usuario.findByName", query = "SELECT u FROM usuario u WHERE LOWER(u.nombreUsuario) = LOWER(?1)")
 public class Usuario implements Serializable{
 
 	/**
@@ -44,11 +44,16 @@ public class Usuario implements Serializable{
 	
 	//las relaciones OneToMany y ManyToMany son por defecto de tipo lazy
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval=true)
+	@OrderBy("fecha DESC")
 	@JsonIgnore //Ignora las publicaciones cuando las soliciten en la api rest
-	private List<Publicacion> publicaciones  = new ArrayList<>();
-	//-tengo que inicializar el arrayList, si no no va a persistir las publicaciones
+	private List<Publicacion> publicaciones = new ArrayList<>();
+		
+	@OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Imagen imagen;
 	
-	/*private List<Usuario> seguidores; //usuarios que me siguen
+	/*
+	private List<Usuario> seguidores; //usuarios que me siguen
 	
 	private List<Usuario> siguiendo; //usuarios que sigo */
 
@@ -103,6 +108,14 @@ public class Usuario implements Serializable{
 	public void setPublicaciones(List<Publicacion> publicaciones) {
 		this.publicaciones = publicaciones;
 	}
+	
+	public Imagen getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(Imagen imagen) {
+		this.imagen = imagen;
+	}
 
 	@Override
 	public String toString() {
@@ -147,6 +160,4 @@ public class Usuario implements Serializable{
 		return true;
 	}
 
-	
-		
 }

@@ -11,17 +11,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Publicacion implements Serializable{
+public class Publicacion implements Serializable, Comparable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8027657552684725480L;
 
+	@Transient
 	private final int MAX_CONT = 200;
 	
 	@Id
@@ -130,6 +132,13 @@ public class Publicacion implements Serializable{
 		} else if (!usuario.equals(other.usuario))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Object p) {
+		Publicacion pb = (Publicacion) p;
+		int e = this.fecha.compareTo(pb.getFecha());
+		return e; 
 	}	
 	
 }

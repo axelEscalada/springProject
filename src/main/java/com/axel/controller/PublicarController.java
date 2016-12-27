@@ -23,7 +23,7 @@ public class PublicarController {
 	@RequestMapping("/publicar")
 	public String publicar(ModelMap model, @RequestParam("publicacion") String contenido){
 		Usuario usuario = (Usuario)model.get("usuario");
-		System.out.println(usuario); //
+		//System.out.println(usuario); //
 		Publicacion publicacion = new Publicacion();
 		publicacion.setContenido(contenido);
 		publicacion.setUsuario(usuario);

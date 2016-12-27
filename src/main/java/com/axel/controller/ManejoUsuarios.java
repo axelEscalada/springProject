@@ -2,15 +2,20 @@ package com.axel.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.axel.entities.Usuario;
 import com.axel.service.UsuarioService;
+import com.axel.service.validarLogin;
 
 @Controller
+@SessionAttributes("usuario")
 @RequestMapping("/managed")
 public class ManejoUsuarios {
 
@@ -22,19 +27,26 @@ public class ManejoUsuarios {
 
     @RequestMapping("/{id}")
     public String editar(ModelMap model, @PathVariable Long id){
-    	Usuario us = usService.buscarId(id);
-    	System.out.println(us);
-    	model.put("usuario", us);//paso el usuario a la vista para recuperar sus datos y usarlos
-		model.put("id", id);
-    	return "editar";
+    	Usuario usuario = (Usuario) model.get("usuario"); //traigo el nombre del modelo
+		if (validarLogin.isLogin(usuario)) {
+    	
+	    	Usuario us = usService.buscarId(id);
+	    	System.out.println(us);
+	    	model.put("usuario", us);//paso el usuario a la vista para recuperar sus datos y usarlos
+			model.put("id", id);
+	    	return "editar";
+		}else return "home";
     }
     
-    @RequestMapping("/actualizar/{id}")
+    @RequestMapping(value = "/actualizar/{id}", method = RequestMethod.POST)
     public String actualizar(@PathVariable Long id, @RequestParam("nombre") String nombreUsuario,
-    		@RequestParam("password") String password){
-    	usService.actualizar(id, nombreUsuario, password);
+    		@RequestParam("password") String password, ModelMap model){
+    	Usuario usuario = (Usuario) model.get("usuario"); //traigo el nombre del modelo
+		if (validarLogin.isLogin(usuario)) {
+			usService.actualizar(id, nombreUsuario, password);
+			return "redirect:/lista";
+		}else return "home";
     	
-    	return "redirect:/lista";
     }
 
     @RequestMapping("/borrar/{id}")

@@ -1,8 +1,10 @@
 package com.axel.service;
 
 import java.util.List;
+import java.util.SortedSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,16 +28,17 @@ public class PublicacionService {
 	}
 
 	//El error lazy se debe a que el metodo inicia la transaccion y al cerrarla se pierde la lista
-	@Transactional(readOnly = true) 
+	/*@Transactional(readOnly = true) 
 	public List<Publicacion> findPublicaciones(Long id){
 		
-		List<Publicacion> publicaciones = (List<Publicacion>) pDao.findByUsuario(id);
+		List<Publicacion> publicaciones = (List<Publicacion>) pDao.findByIdUsuario(id);
+		publicaciones.size();
 		
 		return publicaciones;
-	}
+	}*/
 	
 	@Transactional(readOnly = true) 
-	public List<Publicacion> userGetPublicaciones(Long id){
+	public List<Publicacion> userGetPublicaciones(Long id) {
 		
 		Usuario usuario = uDao.findOne(id);
 		

@@ -37,7 +37,8 @@ public class LoginController {
 						
 			return "redirect:welcome";
 		} else{
-			return "redirect:login";
+			model.addAttribute("error", "usuario y/o contraseña incorrecta");
+			return "login";
 		}
 	}
 

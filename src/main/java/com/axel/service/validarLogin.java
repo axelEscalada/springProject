@@ -10,18 +10,25 @@ public class validarLogin {
 
 	private static UsuarioService usService;
 
-	public boolean validar(String nombre, String password){
+	public boolean validar(String nombre, String password) {
 		
 		boolean resultado = false;
 		
-		Usuario usuario = usService.findByName(nombre);
+		Usuario usuario;
+		String contra = null;
 		
-		String contra = usuario.getPassword();
+		try{
+			usuario = usService.findByName(nombre);
 		
-		if(contra.equalsIgnoreCase(password)){
+			contra = usuario.getPassword();
+			
+			if(contra.equalsIgnoreCase(password)){
 				resultado = true;
+			}	
+		}catch(NullPointerException e){
+			e.getClass();
 		}
-		
+
 		return resultado;
 	}
 	

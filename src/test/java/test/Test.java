@@ -10,10 +10,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.axel.config.AppConfig;
-import com.axel.dao.PublicacionDao;
+import com.axel.dao.ImagenDao;
 import com.axel.dao.UsuarioDao;
 import com.axel.entities.Usuario;
-import com.axel.service.UsuarioService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -23,18 +22,21 @@ public class Test{
 		
 	@Autowired
 	private UsuarioDao usDao;
+	
+	@Autowired
+	private ImagenDao imagenDao;
 		
 	@org.junit.Test
 	public void testUsuarioDao() {
 		
 		Usuario usuario = new Usuario();
-		usuario.setNombreUsuario("jerry");
-		usuario.setPassword("seinfeld");
+		usuario.setNombreUsuario("homero");
+		usuario.setPassword("simpsons");
 		usDao.save(usuario);
 		
-		Usuario usuario2 = usDao.findByName("jerry");
+		Usuario usuario2 = usDao.findByName("homero");
 		
-		assertEquals("jerry", usuario2.getNombreUsuario());
+		assertEquals("homero", usuario2.getNombreUsuario());
 	}
-
+	
 }
